@@ -2,6 +2,9 @@ import Image from 'next/image'
 import Trending from './(home)/Trending'
 import Tech from './(home)/Tech'
 import Travel from './(home)/Travel'
+import Other from './(shared)/Other'
+import Subscribe from './(shared)/Subscribe'
+import Sidebar from './(shared)/Sidebar'
 
 export default function Home() {
   return (
@@ -11,12 +14,13 @@ export default function Home() {
       <div className="basis-3/4">
       <Tech />
       <Travel/>
+      <Other/>
         <div className="hidden md:block">
-      
-        T</div>
+      <Subscribe/>
+        </div>
       </div>
       <div className="basis-1/4">
-        
+        <Sidebar/>
       </div>
     </div>
   </main>  
