@@ -1,11 +1,12 @@
 
+import { Post } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 type Props = {
   className?: string;
-
+post:Post;
   imageHeight: string;
   isSmallCard?: boolean;
   isLongForm?: boolean;
@@ -14,7 +15,7 @@ type Props = {
 const Card = ({
   className,
   imageHeight,
- 
+ post,
   isSmallCard = false,
   isLongForm = false,
 }: Props) => {

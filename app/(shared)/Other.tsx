@@ -16,7 +16,7 @@ const Other = () => {
         <Card
           className="mt-5 sm:mt-0"
           imageHeight="h-80"
-       
+         
         />
         <Card
           className="mt-5 sm:mt-0"
