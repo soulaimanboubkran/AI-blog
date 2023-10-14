@@ -27,21 +27,21 @@ const Card = ({
   return (
     <div className={className}>
     <Link
-      className="basis-full hover:opacity-70"
+      className="basis-full hover:opacity-90"
       href={`${process.env.NEXT_PUBLIC_URL}/post/${post?.id}`}
     >
       <div className={`relative w-auto mb-3 ${imageHeight}`}>
-      {/*  <Image
+      <Image
           fill
           alt="tech"
-          placeholder="blur"
-          src={image}
+          
+          src={post?.image}
           sizes="(max-width: 480px) 100vw,
                 (max-width: 768px) 75vw,
                 (max-width: 1060px) 50vw,
                 33vw"
           style={{ objectFit: "cover" }}
-        /> */}
+        />
       </div>
     </Link>
     <div className="basis-full">

@@ -62,5 +62,4 @@ const Tech = ({techPosts}:Props) => {
     </section>
   );
 };
-
 export default Tech;
