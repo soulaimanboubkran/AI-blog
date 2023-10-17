@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Trending from './(home)/Trending'
 import Tech from './(home)/Tech'
 import Travel from './(home)/Travel'
@@ -7,10 +6,22 @@ import Subscribe from './(shared)/Subscribe'
 import Sidebar from './(shared)/Sidebar'
 import { prisma } from './api/client'
 import { Post } from '@prisma/client' 
-const getPosts =async()=>{
+const getPosts = async () => {
   const posts = await prisma.post.findMany();
-  return posts;
-}
+
+  const formattedPosts = await Promise.all(
+    posts.map(async(post: Post) => {
+      const imageModule = require(`../public${post.image}`);
+      return {
+        ...post,
+        image: imageModule.default,
+      };
+    })
+  );
+
+  return formattedPosts;
+};
+
 
 export default async function Home() {
   const posts = await getPosts();
